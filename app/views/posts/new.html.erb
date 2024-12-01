@@ -1,0 +1,40 @@
+<h1>bandfound</h1>
+<h3>PLAYLIST投稿ページ</h3>
+<%= form_for @post do |f| %>
+
+  <div class="field">
+    <%= f.label :"プレイリストタイトル" %>
+    <%= f.text_field :praylist_name, :size => 30 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"ジャンル" %>
+    <%= f.select :genre, 
+    [["さわやか", "さわやか"], 
+    ["ゆったり", "ゆったり"], 
+    ["元気で明るい", "元気で明るい"],
+    ["切ない", "切ない"],
+    ["落ち着いている", "落ち着いている"],
+    ["激しい", "激しい"],], 
+    include_blank: "選択して下さい" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"プレイリストのオススメバンド※最大３つまで" %>
+    <%= f.text_field :recommend, :size => 30 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"プレイリストの説明"  %>
+    <%= f.text_area :body, :size => "30x2" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"プレイリストのリンク"  %>
+    <%= f.text_area :link, :size => "30x2" %>
+  </div>
+
+  <%= f.submit "投稿する" %>
+<% end %>
+
+<%= link_to "一覧に戻る", posts_path %>

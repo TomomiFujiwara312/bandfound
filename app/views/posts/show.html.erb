@@ -1,0 +1,13 @@
+<h1>bandfound</h1>
+<h3>PLAYLIST詳細</h3>
+<div class="post">
+  <p><%= @post.praylist_name %></p>
+  <p><%= @post.genre %></p>
+  <p><%= @post.recommend %></p>
+  <p><%= @post.body %></p>
+  <p><%= @post.link %></p>
+  <p><%= @post.created_at %></p>
+</div>
+
+<%= link_to "PLAYLIT一覧に戻る", posts_path %>
+<%= link_to "編集する", edit_post_path(@post.id) %>

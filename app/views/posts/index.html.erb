@@ -1,0 +1,17 @@
+<h1>bandfound</h1>
+<h3>PLAYLIST一覧</h3>
+<%= link_to "新規投稿へ", new_post_path %>
+<div class="posts-container">
+  <% @posts.each do |t| %>
+    <div class="post">
+      <%= t.user.email %> 
+      <%= t.praylist_name %>
+      <%= t.genre %>
+      <%= t.recommend %>
+      <%= t.body%>
+      <%= link_to "詳細へ", post_path(t.id) %>
+      <%= link_to "編集する", edit_post_path(t.id) %>
+      <%= button_to "削除する", post_path(t.id), method: :delete %>
+    </div>
+  <% end %>
+</div>
